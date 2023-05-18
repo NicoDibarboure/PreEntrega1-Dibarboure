@@ -23,4 +23,5 @@ function calcularPromedio() {
 
   document.getElementById("resultado").innerHTML =
     "El promedio es: " + promedio.toFixed(2);
+
 }

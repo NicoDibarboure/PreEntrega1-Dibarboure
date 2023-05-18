@@ -1,13 +1,26 @@
-function calcularNotaFinal() {
-  // Obtener las notas ingresadas por el usuario
-  const nota1 = parseFloat(document.getElementById('nota1').value);
-  const nota2 = parseFloat(document.getElementById('nota2').value);
-  const nota3 = parseFloat(document.getElementById('nota3').value);
+function calcularPromedio() {
+  var notas = [];
+  var suma = 0;
 
-  // Calcular la nota final
-  const notaFinal = (nota1 + nota2 + nota3) / 3;
+  for (var i = 1; i <= 5; i++) {
+    var nota = parseFloat(document.getElementById("nota" + i).value);
 
-  // Actualizar el elemento HTML con el resultado
-  const resultadoElement = document.getElementById('resultado');
-  resultadoElement.textContent = `La nota final es: ${notaFinal.toFixed(2)}`;
+    if (isNaN(nota)) {
+      alert("Ingresa un valor numérico válido en la nota " + i + ".");
+      return;
+    }
+
+    if (nota < 0 || nota > 100) {
+      alert("La nota " + i + " debe estar entre 0 y 100.");
+      return;
+    }
+
+    notas.push(nota);
+    suma += nota;
+  }
+
+  var promedio = suma / 5;
+
+  document.getElementById("resultado").innerHTML =
+    "El promedio es: " + promedio.toFixed(2);
 }

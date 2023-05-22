@@ -1,9 +1,9 @@
 function calcularPromedio() {
-  var notas = [];
-  var suma = 0;
+  let notas = [];
+  let suma = 0;
 
-  for (var i = 1; i <= 5; i++) {
-    var nota = parseFloat(document.getElementById("nota" + i).value);
+  for (let i = 1; i <= 5; i++) {
+    let nota = parseFloat(document.getElementById("nota" + i).value);
 
     if (isNaN(nota)) {
       alert("Ingresa un valor numérico válido en la nota " + i + ".");
@@ -19,7 +19,7 @@ function calcularPromedio() {
     suma += nota;
   }
 
-  var promedio = suma / 5;
+  let promedio = suma / 5;
 
   document.getElementById("resultado").innerHTML =
     "El promedio es: " + promedio.toFixed(2);
